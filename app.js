@@ -6,10 +6,10 @@ const multer = require('multer');
 const app = express();
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
+import data from './resource.json';
 
 
-
-const MONGODB_URI = 'mongodb+srv://azamp3139:1mTeQE6YP9ko0ryl@cluster0.afyzoqn.mongodb.net/messages';
+const MONGODB_URI = data.mongoURI;
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
